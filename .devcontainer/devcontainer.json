@@ -1,0 +1,19 @@
+{
+  "name": "EventNest - Cloud Development Environment",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
+  "features": {
+    "ghcr.io/devcontainers-extra/features/mongodb:1": {}
+  },
+  "forwardPorts": [3000, 5000],
+  "portsAttributes": {
+    "3000": {
+      "label": "EventNest Frontend",
+      "onAutoForward": "openPreview"
+    },
+    "5000": {
+      "label": "EventNest API Server",
+      "onAutoForward": "silent"
+    }
+  },
+  "postCreateCommand": "cd backend && npm install && cd ../frontend && npm install"
+}
